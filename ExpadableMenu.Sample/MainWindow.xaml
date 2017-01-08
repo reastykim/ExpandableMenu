@@ -1,0 +1,28 @@
+﻿<Window x:Class="ExpadableMenu.Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:ExpadableMenu.Sample"
+        xmlns:ctrl="clr-namespace:Reasty.Controls;assembly=Reasty.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="240">
+
+  <Window.Resources>
+  </Window.Resources>
+
+
+  <Grid>
+    <ctrl:ExpandableMenu Grid.Column="0" Background="Gray"
+                         ItemsSource="{Binding ExpandableMenuItems}" SelectedItem="{Binding SelectedExpandableMenuItem, Mode=TwoWay}">
+      <ctrl:ExpandableMenu.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Margin="10">
+            <TextBlock Text="{Binding Content}"/>
+          </StackPanel>
+        </DataTemplate>
+      </ctrl:ExpandableMenu.ItemTemplate>
+    </ctrl:ExpandableMenu>
+  </Grid>
+</Window>
